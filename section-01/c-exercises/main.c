@@ -18,9 +18,7 @@ int main() {
     for (int i = 1; i <= 30; i++)
         FizzBuzz(fizzBuzzInput[i]);
 
-    for (int i = 0; i < 20; i++)
-	printf("%d\n", fizzBuzzInput[i]);
-
+    printf("Prining the reversed array: \n");
     qsort(fizzBuzzInput, 20, sizeof(int), cmp);
     for (int i = 0; i < 20; i++)
 	printf("%d\n", fizzBuzzInput[i]);
@@ -33,10 +31,11 @@ int main() {
 matrix_t matrix_transpose(matrix_t m) {
     matrix_t mt = create_matrix(m.cols, m.rows); //<- assume this has been implemented
 
-    for (int i = 0; i < m.rows; ++i) {
-        for (int j = 0; j < m.cols; ++j) {
-            mt.data[j * m.rows + i] = m.data[i * m.cols + j];
-        }
+    for (int i = 0; i < m.rows * m.cols; ++i) {
+        int row = i / m.cols;
+	int col = i % m.cols;
+
+	mt.data[col * mt.cols + row] = m.data[row * m.cols + col];
     }
 
     return mt;
