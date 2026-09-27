@@ -98,18 +98,11 @@ int main(void) {
   while (1) {
     /* USER CODE END WHILE */
 
-    /**
-
-    Blinky exercise: 
-
-
-    Don't write code outside the while loop.
-
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+    HAL_Delay(500);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+    HAL_Delay(500);
     
-    Delete this comment and write your code here.
-    
-    */
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
